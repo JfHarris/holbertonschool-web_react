@@ -22,3 +22,13 @@ const student2: Student = {
 const studentsList = [student1, student2];
 
 const table = document.createElement('table');
+
+studentsList.forEach((student) => {
+    const row = table.insertRow();
+    const firstName = row.insertCell();
+    const location = row.insertCell();
+    firstName.innerHTML = student.firstName;
+    location.innerHTML = student.location;
+});
+
+document.body.appendChild(table);
