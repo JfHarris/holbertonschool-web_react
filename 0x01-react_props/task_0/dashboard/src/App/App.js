@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "../Header/Header";
 import Footer from '../Footer/Footer';
 import Login from "../Login/Login";
@@ -6,18 +6,18 @@ import Notifications from '../Notifications/Notifications';
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <Notifications />
-      <div className="App">
+      <div key="App">
         <Header />
-        <div className="App-body">
-          <Login />
-        </div>
-        <div className="App-footer">
-          <Footer />
-        </div>
       </div>
-    </React.Fragment>
+      <div key="App-body">
+        <Login />
+      </div>
+      <div key="App-footer">
+        <Footer />
+      </div>
+    </>
   );
 }
 
