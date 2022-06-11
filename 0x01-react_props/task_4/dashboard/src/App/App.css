@@ -1,0 +1,8 @@
+.App {
+  border-bottom: 3px solid red;
+}
+
+.App-body {
+  display: flex;
+  justify-content: center;
+}
