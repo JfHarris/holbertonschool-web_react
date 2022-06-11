@@ -6,7 +6,6 @@ import CourseList from "../CourseList/CourseList";
 import Footer from "../Footer/Footer";
 import PropTypes from "prop-types";
 import "./App.css";
-
 import { getLatestNotification } from "../utils/utils";
 
 const listCourses = [
@@ -24,20 +23,18 @@ const listNotifications = [
 
 function App({ isLoggedIn }) {
   return (
-    <React.Fragment>
+    <>
       <Notifications listNotifications={listNotifications} />
-      <div className='App-container'>
-        <div className='App'>
+      <div key='App'>
           <Header />
-        </div>
-        <div className='App-body'>
-          {!isLoggedIn ? <Login /> : <CourseList listCourses={listCourses} />}
-        </div>
-        <div className='App-footer'>
-          <Footer />
-        </div>
       </div>
-    </React.Fragment>
+      <div key='App-body'>
+        {!isLoggedIn ? <Login /> : <CourseList listCourses={listCourses} />}
+      </div>
+      <div key='App-footer'>
+        <Footer />
+      </div>
+    </>
   );
 }
 
