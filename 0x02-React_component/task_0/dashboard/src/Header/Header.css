@@ -1,12 +1,10 @@
 .App-logo {
-    height: 30vmin;
+    width: 200px;
 }
 
 .App-header {
-    align-items: top;
+    align-items: center;
     font-size: 20px;
     color: red;
     display: flex;
-    border-bottom: 3px solid red;
-    margin-bottom:  50px; 
 }
