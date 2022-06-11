@@ -1,8 +1,7 @@
 .App-body {
     margin:  50px;
     min-height: 50vh;
-    font-weight: bold;  
-    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     font-size: 20;
 }
 
@@ -16,4 +15,9 @@ label {
 
 button {
     margin: 1rem;
+}
+
+.App-login input {
+    margin-left: 10px;
+    margin-right: 25px;
 }
