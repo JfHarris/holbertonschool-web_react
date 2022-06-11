@@ -1,10 +1,11 @@
-import { shallow } from 'enzyme';
-import Notifications from './Notifications';
+import { shallow } from "enzyme";
+import React from "react";
+import Notifications from "./Notifications";
 
-describe('<Notifications />', () => {
-  it('test that Notifications renders without crashing', () => {
+describe("<Notifications />", () => {
+  it("Notifications renders without crashing", () => {
     const wrapper = shallow(<Notifications />);
-    expect(wrapper.exists());
+    expect(wrapper.exists()).toEqual(true);
   });
   it("Notifications renders Notification Item and first item has correct html", () => {
     const wrapper = shallow(<Notifications displayDrawer />);
@@ -26,6 +27,12 @@ describe('<Notifications />', () => {
     wrapper.update();
     const item = wrapper.find("div.Notifications");
     expect(item).toHaveLength(0);
+  });
+  it("menu item is being displayed when displayDrawer is true", () => {
+    const wrapper = shallow(<Notifications displayDrawer />);
+    wrapper.update();
+    const item = wrapper.find("div.menuItem");
+    expect(item).toHaveLength(1);
   });
   it("div.Notifications is being displayed when displayDrawer is true", () => {
     const wrapper = shallow(<Notifications displayDrawer />);
