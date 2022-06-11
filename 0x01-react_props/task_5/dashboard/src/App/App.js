@@ -25,13 +25,13 @@ function App({ isLoggedIn }) {
   return (
     <>
       <Notifications listNotifications={listNotifications} />
-      <div key='App'>
+      <div className='App'>
           <Header />
       </div>
-      <div key='App-body'>
+      <div className='App-body'>
         {!isLoggedIn ? <Login /> : <CourseList listCourses={listCourses} />}
       </div>
-      <div key='App-footer'>
+      <div className='App-footer'>
         <Footer />
       </div>
     </>
