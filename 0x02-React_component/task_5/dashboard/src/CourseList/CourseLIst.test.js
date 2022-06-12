@@ -37,7 +37,6 @@ describe("<CourseList />", () => {
       expect(item.at(4).prop("isHeader")).toEqual(false);
     });
   });
-
   describe("CourseList without listCourses or empty listCourses", () => {
     beforeEach(() => {
       listCourses = [];
@@ -53,13 +52,10 @@ describe("<CourseList />", () => {
       expect(item.at(1).prop("textFirstCell")).toEqual("Course name");
       expect(item.at(1).prop("textSecondCell")).toEqual("Credit");
       expect(item.at(1).prop("isHeader")).toEqual(true);
-      expect(item.at(2).prop("textFirstCell")).toEqual(
-        "No course available yet"
-      );
+      expect(item.at(2).prop("textFirstCell")).toEqual("No course available yet");
       expect(item.at(2).prop("textSecondCell")).toEqual(null);
       expect(item.at(2).prop("isHeader")).toEqual(false);
     });
-
     it("it renders the 3 rows with listCourses empty", () => {
       const wrapper = shallow(<CourseList listCourses={listCourses} />);
       expect(wrapper.exists());
@@ -71,9 +67,7 @@ describe("<CourseList />", () => {
       expect(item.at(1).prop("textFirstCell")).toEqual("Course name");
       expect(item.at(1).prop("textSecondCell")).toEqual("Credit");
       expect(item.at(1).prop("isHeader")).toEqual(true);
-      expect(item.at(2).prop("textFirstCell")).toEqual(
-        "No course available yet"
-      );
+      expect(item.at(2).prop("textFirstCell")).toEqual("No course available yet");
       expect(item.at(2).prop("textSecondCell")).toEqual(null);
       expect(item.at(2).prop("isHeader")).toEqual(false);
     });

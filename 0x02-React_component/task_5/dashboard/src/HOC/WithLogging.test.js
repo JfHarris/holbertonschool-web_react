@@ -26,15 +26,9 @@ describe("<WithLogging />", () => {
     const HOC = WithLogging(Login);
     const wrapper = mount(<HOC />);
     expect(wrapper.exists()).toEqual(true);
-    expect(console.log).toHaveBeenNthCalledWith(
-      1,
-      `Component Login is mounted`
-    );
+    expect(console.log).toHaveBeenNthCalledWith(1, `Component Login is mounted`);
     wrapper.unmount();
-    expect(console.log).toHaveBeenNthCalledWith(
-      2,
-      `Component Login is going to unmount`
-    );
+    expect(console.log).toHaveBeenNthCalledWith(2, `Component Login is going to unmount`);
     jest.restoreAllMocks();
   });
 });

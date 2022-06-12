@@ -28,7 +28,7 @@ describe('<BodySectionWithMarginBottom />', () => {
   it('BodySectionWithMarginBottom has correct class for style', () => {
     const wrapper = shallow(
       <BodySectionWithMarginBottom title='test title'>
-        <p>test children node</p>
+        <p>test child node</p>
       </BodySectionWithMarginBottom>
     );
     const div = wrapper.find('.bodySectionWithMargin').first();

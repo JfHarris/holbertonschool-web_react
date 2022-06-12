@@ -24,7 +24,7 @@ describe("<BodySection />", () => {
   it("BodySection has correct class for style", () => {
     const wrapper = shallow(
       <BodySection title="test title">
-        <p>test children node</p>
+        <p>test child node</p>
       </BodySection>
     );
     const div = wrapper.find(".bodySection").first();
