@@ -11,7 +11,6 @@ describe("<Notifications />", () => {
     const wrapper = shallow(<NotificationItem type="default" value="test" />);
     wrapper.update();
     const listItem = wrapper.find("li");
-
     expect(listItem).toHaveLength(1);
     expect(listItem.text()).toEqual("test");
     expect(listItem.prop("data-notification-type")).toEqual("default");
