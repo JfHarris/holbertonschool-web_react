@@ -11,7 +11,6 @@ describe("<Notifications />", () => {
     const wrapper = shallow(<NotificationItem type="default" value="test" />);
     wrapper.update();
     const listItem = wrapper.find("li");
-
     expect(listItem).toHaveLength(1);
     expect(listItem.text()).toEqual("test");
     expect(listItem.prop("data-notification-type")).toEqual("default");
@@ -29,22 +28,14 @@ describe("<Notifications />", () => {
   });
   it("when calling the function markAsRead on an instance of the component, the spy is being called with the right message", () => {
     const id = 27;
-
     const wrapper = shallow(
       <NotificationItem type="default" value="test" id={id} />
     );
-
-    // const instance = wrapper.instance();
     const instance = wrapper;
-
     instance.markAsRead = jest.fn();
-
     const listItem = wrapper.find("li").first();
-
     listItem.simulate("click");
-
     instance.markAsRead(id);
-
     expect(instance.markAsRead).toHaveBeenCalledWith(27);
     jest.restoreAllMocks();
   });
