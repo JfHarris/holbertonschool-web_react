@@ -1,0 +1,27 @@
+.Notifications {
+    padding: 10px;
+    border: 2px dashed #e0354b;
+    margin-bottom: 20px;
+    float: right;
+}
+
+.Notifications button img {
+    width: 20px;
+}
+
+.Notifications p {
+    margin-top: 20px;
+    margin: 0;
+}
+
+[data-notification-type="default"] {
+    color: blue;
+}
+
+[data-notification-type="urgent"] {
+    color: red;
+}
+
+.menuItem {
+    text-align: right;
+}
