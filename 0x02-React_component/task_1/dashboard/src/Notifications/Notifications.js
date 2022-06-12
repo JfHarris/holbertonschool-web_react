@@ -29,7 +29,6 @@ const Notifications = ({ displayDrawer, listNotifications }) => {
             {listNotifications.length === 0 && (
               <NotificationItem value="No new notification for now" />
             )}
-
             {listNotifications.map((notification) => (
               <NotificationItem
                 key={notification.id}

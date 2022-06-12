@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 function NotificationItem({ type, value, html }) {
   let listItem;
-
   if (value) {
     listItem = <li data-notification-type={type}>{value}</li>;
   } else {
@@ -11,7 +10,6 @@ function NotificationItem({ type, value, html }) {
       <li data-notification-type={type} dangerouslySetInnerHTML={html}></li>
     );
   }
-
   return listItem;
 }
 
