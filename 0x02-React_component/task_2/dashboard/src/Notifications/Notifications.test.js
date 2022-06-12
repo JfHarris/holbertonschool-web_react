@@ -6,12 +6,10 @@ import { getLatestNotification } from "../utils/utils";
 describe("<Notifications />", () => {
   let listNotifications;
   let latestNotification;
-
   it("Notifications renders without crashing", () => {
     const wrapper = shallow(<Notifications />);
     expect(wrapper.exists()).toEqual(true);
   });
-
   it("menu item is being displayed when displayDrawer is false", () => {
     const wrapper = shallow(<Notifications />);
     wrapper.update();
@@ -36,7 +34,6 @@ describe("<Notifications />", () => {
     const item = wrapper.find("div.Notifications");
     expect(item).toHaveLength(1);
   });
-
   describe("Notifications with listNotifications", () => {
     beforeEach(() => {
       latestNotification = getLatestNotification();
@@ -46,7 +43,6 @@ describe("<Notifications />", () => {
         { id: 3, type: "urgent", html: { __html: latestNotification } },
       ];
     });
-
     it("Notifications renders Notification Items and items have correct html", () => {
       const wrapper = shallow(
         <Notifications displayDrawer listNotifications={listNotifications} />
@@ -67,12 +63,10 @@ describe("<Notifications />", () => {
       );
     });
   });
-
   describe("Notifications without listNotifications or empty listNotifications", () => {
     beforeEach(() => {
       listNotifications = [];
     });
-
     it("Notifications renders Notification Item correct with empty listNotifications", () => {
       const wrapper = shallow(
         <Notifications displayDrawer listNotifications={listNotifications} />
@@ -100,9 +94,7 @@ describe("<Notifications />", () => {
       const instance = wrapper.instance();
       const id = 5;
       instance.markAsRead(id);
-      expect(console.log).toHaveBeenCalledWith(
-        `Notification ${id} has been marked as read`
-      );
+      expect(console.log).toHaveBeenCalledWith(`Notification ${id} has been marked as read`);
       jest.restoreAllMocks();
     });
   });

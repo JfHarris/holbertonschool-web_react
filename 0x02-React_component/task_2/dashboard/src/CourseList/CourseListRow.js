@@ -16,7 +16,6 @@ function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
         </>
       );
     }
-    //
   } else if (isHeader === false) {
     element = (
       <>
