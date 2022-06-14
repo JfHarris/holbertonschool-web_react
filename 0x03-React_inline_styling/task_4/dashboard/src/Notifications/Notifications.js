@@ -91,9 +91,49 @@ const screenSize = {
   small: "@media screen and (max-width: 900px)",
 };
 
+const opacityKey = {
+  from: {
+    opacity: 0.5,
+  },
+  to: {
+    opacity: 1,
+  },
+};
+
+const transformKey = {
+  "0%": {
+    transform: "translateY(0)",
+  },
+  "100%": {
+    transform: "translateY(0)",
+  },
+  "50%": {
+    transform: "translateY(-5px)",
+  },
+  "75%": {
+    transform: "translateY(5px)",
+  },
+};
+
+const borderKey = {
+  "0%": {
+    border: "3px dashed deepSkyBlue",
+  },
+  "100%": {
+    border: "3px dashed red"
+  },
+};
+
 const styles = StyleSheet.create({
   menuItem: {
-    textAlign: "right",
+    float: "right",
+    backgroundColor: "#fff8f8",
+    ":hover": {
+      animtionDuration: "1s, 0.5s",
+      cursor: "pointer",
+      animationName: "opacityKey, translateKey",
+      animationIterationCount: 3,
+    },
   },
 
   menuItemPNoShow: {
@@ -112,16 +152,26 @@ const styles = StyleSheet.create({
     border: `3px solid red`,
     padding: "10px",
     marginBottom: "20px",
+    animationName: [borderKey],
+    animtionDuration: "0.8s",
+    animationIterationCount: 1,
+    animationFillMode: "forwards",
+    ":hover": {
+      border: "3px dashed deepBlueSky",
+    },
     [screenSize.small]: {
       float: "none",
       border: "none",
       listStyle: "none",
       padding: 0,
       fontSize: "20px",
+      ":hover": {
+        border: "none",
+      },
       position: "absolute",
       background: "white",
-      height: "100%",
-      width: "100%",
+      height: "110vh",
+      width: "100vw",
     },
   },
 
