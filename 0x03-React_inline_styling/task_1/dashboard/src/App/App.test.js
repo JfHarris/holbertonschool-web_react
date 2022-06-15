@@ -9,6 +9,12 @@ import Notifications from '../Notifications/Notifications';
 import { StyleSheetTestUtils } from "aphrodite";
 
 describe('<App />', () => {
+  beforeAll(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
+  });
+  afterAll(() => {
+    StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
+  });
   it('renders without crashing', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.exists());
