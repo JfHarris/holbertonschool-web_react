@@ -20,7 +20,7 @@ class BodySection extends Component {
 }
 
 BodySection.defaultProps = {
-  title: "",
+  title: '',
 };
 
 BodySection.propTypes = {
@@ -33,9 +33,9 @@ const screenSize = {
 
 const styles = StyleSheet.create({
   bodySection: {
-    display: "flex",
-    flexWrap: "wrap",
-    width: "100%",
+    width: '100%',
+    display: 'flex',
+    flexWrap: 'wrap',
     [screenSize.small]: {
       boxSizing: "border-box",
       paddingRight: "50px",
@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
       paddingBottom: "20px",
     },
   },
-
   bodySectionH2: {
     width: "100%",
   },

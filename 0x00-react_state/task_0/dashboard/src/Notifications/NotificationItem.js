@@ -58,7 +58,7 @@ const screenSize = {
   small: "@media screen and (max-width: 900px)",
 };
 
-const listItemSmall = {
+const SmallListItem = {
   listStyle: "none",
   borderBottom: "1px solid black",
   padding: "10px 8px",
@@ -67,13 +67,13 @@ const listItemSmall = {
 
 const styles = StyleSheet.create({
   default: {
-    color: "blue",
-    [screenSize.small]: listItemSmall,
+    color: 'blue',
+    [screenSize.small]: SmallListItem,
   },
 
   urgent: {
-    color: "red",
-    [screenSize.small]: listItemSmall,
+    color: 'red',
+    [screenSize.small]: SmallListItem,
   },
 });
 

@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import NotificationItem from "./NotificationItem";
 import PropTypes from "prop-types";
 import NotificationItemShape from "./NotificationItemShape";
+import { StyleSheet } from "aphrodite";
+import { css } from "aphrodite";
 import closeIcon from "../assets/close-icon.png";
-import { StyleSheet, css } from "aphrodite";
 
 class Notifications extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Notifications extends Component {
           <p className={menuPStyle}>Your notifications</p>
         </div>
         {displayDrawer && (
-          <div className={css(styles.notifications)} id="Notifications">
+          <div className={css(styles.Notifications)} id="Notifications">
             <button
               style={{
                 background: "transparent",
@@ -59,10 +60,10 @@ class Notifications extends Component {
               <img
                 src={closeIcon}
                 alt="close-icon"
-                className={css(styles.notificationsButtonImage)}
+                className={css(styles.NotificationsButtonImg)}
               />
             </button>
-            <p className={css(styles.notificationsP)}>
+            <p className={css(styles.NotificationsP)}>
               Here is the list of notifications
             </p>
             <ul className={css(styles.notificationsUL)}>
@@ -105,7 +106,7 @@ const screenSize = {
   small: "@media screen and (max-width: 900px)",
 };
 
-const opacityKeyframes = {
+const opacityKey = {
   from: {
     opacity: 0.5,
   },
@@ -115,7 +116,7 @@ const opacityKeyframes = {
   },
 };
 
-const translateYKeyframes = {
+const transformYKey = {
   "0%": {
     transform: "translateY(0)",
   },
@@ -133,7 +134,7 @@ const translateYKeyframes = {
   },
 };
 
-const borderKeyframes = {
+const borderKey = {
   "0%": {
     border: `3px dashed blue`,
   },
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff8f8",
     ":hover": {
       cursor: "pointer",
-      animationName: [opacityKeyframes, translateYKeyframes],
+      animationName: [opacityKey, transformYKey],
       animationDuration: "1s, 0.5s",
       animationIterationCount: 3,
     },
@@ -164,11 +165,11 @@ const styles = StyleSheet.create({
     marginRight: "8px",
   },
 
-  notifications: {
+  Notifications: {
     float: "right",
     padding: "10px",
     marginBottom: "20px",
-    animationName: [borderKeyframes],
+    animationName: [borderKey],
     animationDuration: "0.8s",
     animationIterationCount: 1,
     animationFillMode: "forwards",
@@ -191,11 +192,11 @@ const styles = StyleSheet.create({
     },
   },
 
-  notificationsButtonImage: {
+  NotificationsButtonImg: {
     width: "10px",
   },
 
-  notificationsP: {
+  NotificationsP: {
     margin: 0,
     marginTop: "15px",
   },

@@ -32,10 +32,10 @@ const screenSize = {
 
 const styles = StyleSheet.create({
   bodySectionWithMargin: {
-    marginBottom: "40px",
-    width: "100%",
+    marginBottom: '40px',
+    width: '100%',
     [screenSize.small]: {
-      marginBottom: "10px",
+      marginBottom: '10px',
     },
   },
 });
