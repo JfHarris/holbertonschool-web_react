@@ -1,4 +1,4 @@
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import React from "react";
 import BodySection from "./BodySection";
 import { StyleSheetTestUtils } from "aphrodite";
