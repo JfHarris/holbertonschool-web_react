@@ -69,7 +69,7 @@ class Notifications extends PureComponent {
                   type={notification.type}
                   value={notification.value}
                   html={notification.html}
-                  markAsRead={this.markNotificationAsRead}
+                  markAsRead={markNotificationAsRead}
                 />
               ))}
             </ul>
