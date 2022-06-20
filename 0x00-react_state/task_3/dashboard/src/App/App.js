@@ -47,7 +47,7 @@ class App extends Component {
   handleKeyCombination(e) {
     if (e.key === "h" && e.ctrlKey) {
       alert("Logging you out");
-      this.props.logOut();
+      this.state.logOut();
     }
   }
 
