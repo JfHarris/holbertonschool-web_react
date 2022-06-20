@@ -9,20 +9,21 @@ class Header extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     const { user, logOut } = this.context;
     return (
-    <div className={css(styles.header)}>
-      <img src={holberton_logo} className={css(styles.headerImg)} />
-      <h1>School dashboard</h1>
-      { user.isLoggedin && (
-      <p id="logOutSection" className={css(styles.logoutSection)}>
-        Welcome <b>{`${user.email} `}</b>
-        <span onClick={logOut} className={css(styles.logoutSectionSpan)}>
-          (logout)
-          </span> 
+      <div className={css(styles.header)}>
+        <img src={holberton_logo} className={css(styles.headerImg)} />
+        <h1>School dashboard</h1>
+        {user.isLoggedIn && (
+          <p id="logoutSection" className={css(styles.logoutSection)}>
+            Welcome <b>{`${user.email} `}</b>
+            <span onClick={logOut} className={css(styles.logoutSectionSpan)}>
+              (logout)
+            </span>
           </p>
-          )}
+        )}
       </div>
     );
   }

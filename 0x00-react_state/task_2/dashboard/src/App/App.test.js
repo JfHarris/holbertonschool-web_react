@@ -2,6 +2,10 @@ import React from "react";
 import App from "./App";
 import { shallow } from "enzyme";
 import { StyleSheetTestUtils } from "aphrodite";
+import AppContext from './AppContext';
+import { mount } from 'enzyme';
+import { logOut } from './AppContext';
+import { user } from './AppContext';
 
 describe("<App />", () => {
   beforeAll(() => {
@@ -42,8 +46,8 @@ describe("<App />", () => {
   it("isLoggedIn is true", () => {
     const wrapper = shallow(<App isLoggedIn />);
     wrapper.update();
-    expect(wrapper.find("Login")).toHaveLength(0);
-    expect(wrapper.find("CourseList")).toHaveLength(1);
+    expect(wrapper.find("Login")).toHaveLength(1);
+    expect(wrapper.find("CourseList")).toHaveLength(0);
   });
   it("when the keys control and h are pressed the logOut function, passed as a prop, is called and the alert function is called with the string Logging you out", () => {
     const events = {};
@@ -76,5 +80,39 @@ describe("<App />", () => {
     expect(wrapper.state().displayDrawer).toEqual(true);
     wrapper.instance().handleHideDrawer();
     expect(wrapper.state().displayDrawer).toEqual(false);
+  });
+  it("test to verify that the logIn function updates the state correctly", () => {
+    const wrapper = mount(
+      <AppContext.Provider value={{ user, logOut }}>
+        <App />
+      </AppContext.Provider>
+    );
+    const loggedUser = {
+      email: "jeff@gmail.com",
+      password: "123456789",
+      isLoggedIn: true,
+    };
+    const instance = wrapper.instance();
+    expect(wrapper.state().user).toEqual(user);
+    instance.logIn(loggedUser.email, loggedUser.password);
+    expect(wrapper.state().user).toEqual(loggedUser);
+  });
+  it("test to verify that the logOut function updates the state correctly", () => {
+    const wrapper = mount(
+      <AppContext.Provider value={{ user, logOut }}>
+        <App />
+      </AppContext.Provider>
+    );
+    const loggedUser = {
+      email: "jeff@gmail.com",
+      password: "123456789",
+      isLoggedIn: true,
+    };
+    const instance = wrapper.instance();
+    expect(wrapper.state().user).toEqual(user);
+    instance.logIn(loggedUser.email, loggedUser.password);
+    expect(wrapper.state().user).toEqual(loggedUser);
+    instance.logOut();
+    expect(wrapper.state().user).toEqual(user);
   });
 });
