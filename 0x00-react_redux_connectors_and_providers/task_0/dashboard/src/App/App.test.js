@@ -1,13 +1,18 @@
 import React from "react";
-import App from "./App";
+import App, { mapStateToProps } from "./App";
 import { shallow } from "enzyme";
 import { StyleSheetTestUtils } from "aphrodite";
 import { listNotificationsOnset } from './App';
 import { mount } from 'enzyme';
 import AppContext from "./AppContext";
 import { user, logOut } from "./AppContext";
+import { fromJS } from "immutable";
+import { Provider } from "react-redux";
+import uiReducer from "../reducers/uiReducer";
+import { basicState } from "../reducers/uiReducer";
+import { createStore } from "redux";
 
-describe("<App />", () => {
+/* describe("<App />", () => {
   beforeAll(() => {
     StyleSheetTestUtils.suppressStyleInjection();
   });
@@ -144,5 +149,14 @@ describe("<App />", () => {
       listNotificationsOnset.slice(1, 2)
     );
   });
-*/}
-});
+  */
+  const store = createStore(uiReducer, basicState);
+  describe("<App />", () => {
+    it(" returns the right object ", () => {
+      let state = fromJS({
+        isUserLoggedIn: true
+      });
+      const output = mapStateToProps(state);
+      expect(output).toEqual({ isLoggedIn: true });
+    })
+  })

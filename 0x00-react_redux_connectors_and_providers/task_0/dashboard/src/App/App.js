@@ -48,7 +48,7 @@ class App extends Component {
   handleKeyCombination(e) {
     if (e.key === "h" && e.ctrlKey) {
       alert("Logging you out");
-      this.props.logOut();
+      this.state.logOut();
     }
   }
 
@@ -91,14 +91,8 @@ class App extends Component {
   }
 
   render() {
-    const {
-      user,
-      user: { isLoggedIn },
-      logOut,
-      displayDrawer,
-      listNotifications,
-    } = this.state;
-
+    const { user, logOut, displayDrawer, listNotifications } = this.state;
+    const  { isLoggedIn } = this.props;
     const value = { user, logOut };
 
     return (
@@ -188,7 +182,7 @@ const styles = StyleSheet.create({
 
 export const mapStateToProps = (state) => {
   return {
-    isLoggedIn: state.get("userIsLoggedIn")
+    isLoggedIn: state.get("isUserLoggedIn")
   };
 }
 
