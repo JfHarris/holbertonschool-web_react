@@ -158,5 +158,12 @@ import { createStore } from "redux";
       });
       const output = mapStateToProps(state);
       expect(output).toEqual({ isLoggedIn: true });
-    })
+    });
+    it("mapStateToProps returns the right object from display Drawer", () => {
+      let state = fromJS({
+        isNotificationDrawerVisible: true,
+      });
+      const output = mapStateToProps(state);
+      expect(output).toEqual({ displayDrawer: true });
+    });
   })
