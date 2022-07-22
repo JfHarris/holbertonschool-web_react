@@ -1,4 +1,4 @@
-import { getListCoursesn } from "./courseSelector";
+import { getListCourses } from "./courseSelector";
 import { Map } from "immutable";
 import { fromJS } from "immutable";
 
