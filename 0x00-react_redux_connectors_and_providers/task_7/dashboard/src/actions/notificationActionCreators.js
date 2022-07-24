@@ -1,6 +1,5 @@
 import { MARK_AS_READ, SET_TYPE_FILTER,
   SET_LOADING_STATE, FETCH_NOTIFICATIONS_SUCCESS } from "./notificationActionTypes";
-
 import "node-fetch";
 
 export const markAsAread = (index) => {

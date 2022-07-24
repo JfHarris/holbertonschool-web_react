@@ -1,6 +1,5 @@
 import React from "react";
 import { getFullYear, getFooterCopy } from "../utils/utils";
-import AppContext from '../App/AppContext';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 

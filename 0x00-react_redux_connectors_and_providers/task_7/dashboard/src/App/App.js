@@ -55,7 +55,8 @@ export class App extends Component {
 
   render() {
     const { user } = this.state;
-    const  { isLoggedIn, displayDrawer, displayNotificationDrawer, hideNotificationDrawer, login, logout } = this.props;
+    const  { isLoggedIn, displayDrawer, displayNotificationDrawer,
+      hideNotificationDrawer, login, logout } = this.props;
 
     return (
       <>
