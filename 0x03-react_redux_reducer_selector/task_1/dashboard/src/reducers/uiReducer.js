@@ -1,4 +1,4 @@
-import { map } from 'immutable';
+import Map from 'immutable';
 
 import {
   LOGIN,
