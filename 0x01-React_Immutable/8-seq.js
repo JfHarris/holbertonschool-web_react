@@ -7,7 +7,7 @@ export default function printBestStudents(grades) {
     .filter((student) => student.score > 70)
     .map((student) => {
       const { firstName, lastName } = student;
-      return {student};
+      return { student };
     });
 
   studentsList.forEach((student) => console.log(student));
