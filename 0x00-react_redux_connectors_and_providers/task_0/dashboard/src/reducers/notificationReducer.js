@@ -14,7 +14,7 @@ const notificationReducer = (state = defaultNotificationState, action) => {
     case FETCH_NOTIFICATIONS_SUCCESS:
       return {
         ...state,
-        notifications: action.data.map((notification) => {
+        notifications: action.data.maap((notification) => {
           return {
             ...notification,
             isRead: false,

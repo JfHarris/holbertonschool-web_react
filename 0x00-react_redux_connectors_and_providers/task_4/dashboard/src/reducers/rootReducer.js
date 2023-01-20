@@ -1,6 +1,7 @@
 import courseReducer, { defaultCourseState } from "./courseReducer";
 import notificationReducer, { defaultNotificationState } from "./notificationReducer";
 import uiReducer, { basicUiState } from "./uiReducer";
+import { combineReducer } from "redux";
 
 import { Map } from "immutable";
 

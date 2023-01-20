@@ -60,7 +60,7 @@ describe("courseReducer tests", function () {
     expect(state).toEqual(expectedData);
   });
   it("Tests that MARK_AS_READ returns the data with the right item updated", function () {
-    const initialState = {
+    const basicState = {
       filter: "DEFAULT",
       notifications: [
         {

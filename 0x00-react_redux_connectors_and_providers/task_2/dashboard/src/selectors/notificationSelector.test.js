@@ -1,10 +1,8 @@
 import { fromJS } from "immutable";
 import { Map } from "immutable";
 import { filterTypeSelected, getNotifications, getUnreadNotifications } from "./notificationSelector";
-
 import notificationReducer from "../reducers/notificationReducer";
 import { initialNotificationState } from "../reducers/notificationReducer";
-
 import notificationsNormalizer from "../schema/notifications";
 
 describe("Selectors tests", function () {
