@@ -1,0 +1,23 @@
+{
+  "name": "0x00-react_intro",
+  "version": "1.0.0",
+  "description": "How to create a basic Javascript application using React How to use the package create-react-app to start developing quickly with React What JSX is and how to use it How to use the React Developer Tools to debug your code How to use Enzyme’s Shadow rendering to test your application How to use React with Webpack & Babel",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}
