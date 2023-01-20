@@ -1,39 +1,39 @@
-import react from 'react';
-import App from './App';
-import { expect } from 'chai';
-import { shallow } from 'enzyme';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
-import Login from "../Login/Login";
-import Notifications from '../Notifications/Notifications';
+import { shallow, mount } from "enzyme";
+import React from "react";
+import App from "./App";
 import { StyleSheetTestUtils } from "aphrodite";
 
-describe('<App />', () => {
+describe("<App />", () => {
   beforeAll(() => {
     StyleSheetTestUtils.suppressStyleInjection();
   });
   afterAll(() => {
     StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
   });
-  it('renders without crashing', () => {
+
+  it("App renders without crashing", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists());
+    expect(wrapper.exists()).toEqual(true);
   });
-  it('renders a Notifications component', () => {
+  it("should contain the Notifications component", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find(Notifications)).to.have.lengthOf(1);
+    wrapper.update();
+    expect(wrapper.find("Notifications")).toHaveLength(1);
   });
-  it('renders a Header component', () => {
+  it("should contain the Header component", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find(Header)).to.have.lengthOf(1);
+    wrapper.update();
+    expect(wrapper.find("Header")).toHaveLength(1);
   });
-  it('renders a Login component', () => {
+  it("should contain the Login component", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find(Login)).to.have.lengthOf(1);
+    wrapper.update();
+    expect(wrapper.find("Login")).toHaveLength(1);
   });
-  it('renders a Footer component', () => {
+  it("should contain the Footer component", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find(Footer)).to.have.lengthOf(1);
+    wrapper.update();
+    expect(wrapper.find("Footer")).toHaveLength(1);
   });
   it("CourseList is not displayed with isLoggedIn false by default", () => {
     const wrapper = shallow(<App />);
@@ -46,12 +46,17 @@ describe('<App />', () => {
     expect(wrapper.find("Login")).toHaveLength(0);
     expect(wrapper.find("CourseList")).toHaveLength(1);
   });
-  it('logOut alerts with correct string', () => {
-    const myLogOut = jest.fn(() => undefined);
-    const myAlert = jest.spyOn(global, 'alert');
-    const wrapper = shallow(<App logOut={myLogOut} />)
-    expect(myAlert);
-    expect(myLogOut);
+  it("when the keys control and h are pressed the logOut function, passed as a prop, is called and the alert function is called with the string Logging you out", () => {
+    const events = {};
+    const logout = jest.fn();
+    document.addEventListener = jest.fn((event, cb) => {
+      events[event] = cb;
+    });
+    window.alert = jest.fn();
+    shallow(<App logOut={logout} />);
+    events.keydown({ key: "h", ctrlKey: true });
+    expect(window.alert).toHaveBeenCalledWith("Logging you out");
+    expect(logout).toHaveBeenCalled();
     jest.restoreAllMocks();
   });
 });
